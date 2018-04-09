@@ -1,0 +1,8 @@
+<p>
+  hero-detail works!
+</p>
+<div *ngIf="hero">
+  <input [(ngModel)]="hero.name" />
+  <span> with id is {{hero.id}}</span>
+  <button (click)="save()">save</button>
+</div>
