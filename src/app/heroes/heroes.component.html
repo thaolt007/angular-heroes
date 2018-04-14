@@ -3,6 +3,10 @@
 </p>
 <h3>List heroes</h3>
 <ul *ngFor="let hero of heroes">
-  <li [class.selected]="hero===selectedHero" (click)="onClickHero(hero)">{{hero.id}}. {{hero.name}}</li>
+  <li [class.selected]="hero===selectedHero" routerLink="/detail/{{hero.id}}">{{hero.id}}. {{hero.name}}</li>
 </ul>
-<app-hero-detail [hero]="selectedHero"></app-hero-detail>
+<div>
+  <label>Name:</label>
+  <input #heroName placeholder="Hero name"/>
+  <button (click)="add(heroName.value); heroName.value=''">Add</button>
+</div>
